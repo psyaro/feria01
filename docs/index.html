@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>calculator</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <section class="calc">
+            <div class="result-wrapper">
+                <div id="result">
+                  <div id="resulttext"></div>
+                  <div id="resultoperator"></div>
+                </div>
+            </div>
+            <div class="button-wrapper">
+                <div class="button-line">
+                    <button class="button" id="7" value="7" onClick="functionId(this.id)">7</button>
+                    <button class="button" id="8" value="8" onclick="functionId(this.id)">8</button>
+                    <button class="button" id="9" value="9" onclick="functionId(this.id)">9</button>
+                    <button class="button operator" id="+" value="+" onclick="functionId(this.id)">+</button>
+                </div>
+                <div class="button-line">
+                    <button class="button" id="4" value="4" onclick="functionId(this.id)">4</button>
+                    <button class="button" id="5" value="5" onclick="functionId(this.id)">5</button>
+                    <button class="button" id="6" value="6" onclick="functionId(this.id)">6</button>
+                    <button class="button operator" id="-" value="-" onclick="functionId(this.id)">-</button>
+                </div>
+                <div class="button-line">
+                    <button class="button" id="1" value="1" onclick="functionId(this.id)">1</button>
+                    <button class="button" id="2" value="2" onclick="functionId(this.id)">2</button>
+                    <button class="button" id="3" value="3" onclick="functionId(this.id)">3</button>
+                    <button class="button operator" id="×" value="×" onclick="functionId(this.id)">×</button>
+                </div>
+                <div class="button-line">
+                    <button class="button" id="0" value="0" onclick="functionId(this.id)">0</button>
+                    <button class="button clear" id="C" value="C" onclick="functionId(this.id)">C</button>
+                    <button class="button equal" id="=" value="=" onclick="functionId(this.id)">=</button>
+                    <button class="button operator" id="÷" value="÷" onclick="functionId(this.id)">÷</button>
+                </div>
+            </div>
+          </section>
+          <section class="guide">
+            <p>【電卓】四則演算をすることができます（上限10桁）。</p>
+            <p>負の数、小数は入力できません（改修予定）。</p>
+            <p>計算結果が小数の場合は第9位で四捨五入します。</p>
+            <p>【エラー詳細】</p>
+            <p>ERROR 01</p>
+            <p>→計算結果が10桁を超えています。</p>
+            <p>ERROR 02</p>
+            <p>→演算子の値が不正です。</p>
+            <p>（発生しない想定なので発生した場合は教えていただけると助かります）</p>
+            <p>ERROR 03</p>
+            <p>→0で割ることはできません。</p>
+            <p>ERROR 04</p>
+            <p>→結果が定義されていません。</p>
+          </section>
+          <script src="script.js"></script>
+    </body>
+</html>
