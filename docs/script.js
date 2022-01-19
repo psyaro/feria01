@@ -1,5 +1,6 @@
 let num1 = null;
 let reset_flug = false;
+let operation_flug = false;
 
 function displaytext(disp) {
     document.getElementById("resulttext").innerHTML = disp;
@@ -50,13 +51,14 @@ function functionId(id) {
         displaytext('0');
         displayoperator('');
         return
-    }
+    }    
 
     if(id === "+" || id === "-" || id === "×" || id === "÷" || id === "=") {
-        if(document.getElementById("resultoperator").innerHTML === "="){
+        if(operation_flug === true){
             displayoperator(id);
             return
         }
+        operation_flug = true;
         reset_flug = true;
         if (num1 === null){
             num1 = Number(document.getElementById("resulttext").innerHTML);
@@ -71,6 +73,11 @@ function functionId(id) {
         displaytext(num1);
         displayoperator(id);
         return;        
+    }
+
+    operation_flug = false;
+    if(document.getElementById("resultoperator").innerHTML === '='){
+        num1 = null;
     }
 
     if(reset_flug === true) {
