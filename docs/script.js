@@ -7,8 +7,15 @@ function displaytext(disp) {
 }
 function addText(disp) {
     if (document.getElementById("resulttext").innerHTML === '0'){
-        displaytext(disp);
-        return;
+        if (disp !== '.'){
+            displaytext(disp);
+            return;            
+        }
+    }
+    if(disp === '.'){
+        if(document.getElementById("resulttext").innerHTML.includes('.')){
+            return;
+        }        
     }
     document.getElementById("resulttext").innerHTML = 
         document.getElementById("resulttext").innerHTML + disp;

@@ -5,8 +5,12 @@
         <meta charset="utf-8">
         <title>calculator</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-        <link rel="stylesheet" href="./css/style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            document.write(
+              '<link rel="stylesheet" href="./css/style.css?' + new Date().getTime() + '">'
+            );
+        </script>   
   
     </head>
     <body>
@@ -41,6 +45,12 @@
                     <button class="button clear" id="C" value="C" onclick="functionId(this.id)">C</button>
                     <button class="button equal" id="=" value="=" onclick="functionId(this.id)">=</button>
                     <button class="button operator" id="÷" value="÷" onclick="functionId(this.id)">÷</button>
+                </div>
+                <div class="button-line">
+                    <button class="button operator" id="." value="." onclick="functionId(this.id)">.</button>
+                    <button class="button" id="a" value="a" onclick="functionId(this.id)">?</button>
+                    <button class="button" id="a" value="a" onclick="functionId(this.id)">?</button>
+                    <button class="button" id="a" value="a" onclick="functionId(this.id)">?</button>
                 </div>
             </div>
           </section>
